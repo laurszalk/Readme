@@ -22,35 +22,88 @@ const questions = [
     type: "input",
     message: "What is the title of your project?",
     name: "title",
+    // add conditionals with errors to force user input
+    validate: (titleInput) => {
+      if (titleInput) {
+        return true;
+      } else {
+        console.log("Please enter your project name.");
+        return false;
+      }
+    },
   },
   {
     type: "input",
     message: "What is the description of your project?",
     name: "description",
+    validate: (aboutInput) => {
+      if (aboutInput) {
+        return true;
+      } else {
+        console.log("Please enter a description of your project.");
+        return false;
+      }
+    },
   },
   {
     type: "input",
-    message: "What are the installation instructions for the project?",
+    message: "What are the installation instructions for your project?",
     name: "installation",
+    validate: (aboutInput) => {
+      if (aboutInput) {
+        return true;
+      } else {
+        console.log(
+          "Please enter the installation instructions for your project."
+        );
+        return false;
+      }
+    },
   },
   {
     type: "input",
-    message: "What is the usage information?",
+    message: "What is the usage information for your project?",
     name: "usage",
+    validate: (aboutInput) => {
+      if (aboutInput) {
+        return true;
+      } else {
+        console.log("Please enter the usage information for your project.");
+        return false;
+      }
+    },
   },
   {
     type: "input",
-    message: "What are the contribution guidelines?",
+    message: "What are the contribution guidelines for your project?",
     name: "contribution",
+    validate: (aboutInput) => {
+      if (aboutInput) {
+        return true;
+      } else {
+        console.log(
+          "Please enter the contribution guidelines for your project."
+        );
+        return false;
+      }
+    },
   },
   {
     type: "input",
-    message: "What are the test instructions?",
+    message: "What are the test instructions for your project?",
     name: "testInstructions",
+    validate: (aboutInput) => {
+      if (aboutInput) {
+        return true;
+      } else {
+        console.log("Please enter the test instructions for your project.");
+        return false;
+      }
+    },
   },
   {
     type: "checkbox",
-    message: "What is the license?",
+    message: "What kind of license should your project have?",
     name: "license",
     choices: [
       "MIT License",
@@ -60,17 +113,42 @@ const questions = [
       "Mozilla Public License 2.0",
       "None",
     ],
+    // doesn't work
+    // validate: (aboutCheckbox) => {
+    //   if (aboutCheckbox) {
+    //     return true;
+    //   } else {
+    //     console.log("Please select a license for your project.");
+    //     return false;
+    //   }
+    // },
   },
 
   {
     type: "input",
     message: "What is your email address?",
     name: "email",
+    validate: (aboutInput) => {
+      if (aboutInput) {
+        return true;
+      } else {
+        console.log("Please enter your email address.");
+        return false;
+      }
+    },
   },
   {
     type: "input",
     message: "What is your GitHub username?",
     name: "username",
+    validate: (aboutInput) => {
+      if (aboutInput) {
+        return true;
+      } else {
+        console.log("Please enter your GitHub username.");
+        return false;
+      }
+    },
   },
 ];
 
@@ -88,8 +166,6 @@ function init() {
     writeToFile("README.md", generateMarkdown(userInput));
   });
 }
-
-// add conditionals with errors to force user input
 
 // Function call to initialize
 init();
