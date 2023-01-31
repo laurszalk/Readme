@@ -22,7 +22,7 @@ const questions = [
     type: "input",
     message: "What is the title of your project?",
     name: "title",
-    // add conditionals with errors to force user input
+    // add validation to force user input
     validate: (titleInput) => {
       if (titleInput) {
         return true;
@@ -93,6 +93,7 @@ const questions = [
     message: "What are the test instructions for your project?",
     name: "testInstructions",
     validate: (aboutInput) => {
+      console.log(aboutInput);
       if (aboutInput) {
         return true;
       } else {
