@@ -76,9 +76,6 @@ ${renderLicenseBadge(data.license)}
 
 ${data.description}
 
-// call the function inside the template literals
-// look up syntax for markdown for images
-// ![alt text] 
 ## Installation
 
 ${data.installation}
